@@ -1,5 +1,52 @@
-##QQ校园号认证方法
 
-#####作者:李嘉俊 电话:15992412840 邮箱:381415306@qq.com
 
-在你提供的url后面会跟上一个account=** (当前用户的中央认证帐号) 这个帐号是已经通过认证的
+
+#QQ校园号认证接口
+
+####备注:在Demo里面的js方法要放到在QQ打开的首页里面。
+
+##请求说明
+###请求方式: 
+POST
+
+dataType:"json"
+
+Content-Type: application/json
+
+###URL:
+http://ghxs.88u.cas.scut.edu.cn/Wisdom/qq/getAuthentication
+
+###请求包结构体为:
+```
+{
+"code":"" //QQ提供的code
+}
+
+```
+
+---
+
+
+###返回结果
+成功时：
+```
+{
+" account":"" //用户的中央认证帐号 (String)
+" result":"success"//(发送成功)
+}
+```
+```
+{
+" result":"no authentication"  //(该用户未认证)
+}
+```
+失败时：
+```
+{
+
+"result":"fail"(code错误)
+
+}
+```
+
+
